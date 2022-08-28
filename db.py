@@ -1,5 +1,4 @@
 import sqlite3
-from sqlite3.dbapi2 import _Statement
 
 DB_NAME = "country.db"
 
@@ -21,15 +20,15 @@ def create_tables():
     cursor = db.cursor()
     cursor.execute(table)
 
-def insert_values(min, mean, max, total):
+def insert_values(list_values):
     db = get_db()
     cursor = db.cursor()
     statement = "INSERT INTO country_stat(min, mean, max, total) values (?, ?, ?, ?)"
-    cursor.execute(statement, [min, mean, max, total])
+    cursor.execute(statement, list_values)
     db.commit()
 
     return True
 
-def create_record(min, mean, max, total):
+def create_record(list_values):
     create_tables()
-    insert_values(min, mean, max, total)
+    insert_values(list_values)

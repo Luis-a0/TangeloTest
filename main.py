@@ -1,6 +1,8 @@
 import requests
 import pandas as pd
+
 from procesing import dict_generate
+import db
 
 URL = "https://restcountries.com/v3.1/all"
 
@@ -13,6 +15,9 @@ if __name__ == '__main__':
     df = pd.DataFrame(dicc)
     df.to_json('data.json')
 
-    v_min, v_mean, v_max, v_total = df['time'].min(), df['time'].mean(), df['time'].max(),df['time'].sum()
+    list_values = [df['time'].min(), df['time'].mean(), df['time'].max(),df['time'].sum()]
+    v_min, v_mean, v_max, v_total = list_values
+
+    db.create_record(list_values)
 
     print(f"Valor minimo: {v_min}, valor promedio: {v_mean}, valor maximo: {v_max}, valor total: {v_total}")
