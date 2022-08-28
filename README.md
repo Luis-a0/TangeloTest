@@ -1,7 +1,7 @@
 # TangeloTest
 ### Prueba técnica para aplicar a la posición de Python Developer 
 
-Desarrolle una aplicación en python que genere una tabla con las columnas **Región, City, Name, Language, Time** teniendo las siguientes consideraciones:
+Desarrollar una aplicación en python que genere una tabla con las columnas **Región, City, Name, Language, Time** teniendo en cuenta las siguientes consideraciones:
 
 - De https://restcountries.com/ obtener el nombre del idioma que habla el país y encriptelo con SHA1 
 
