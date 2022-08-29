@@ -20,4 +20,7 @@ if __name__ == '__main__':
 
     db.create_record(list_values)
 
-    print(f"Valor minimo: {v_min}, valor promedio: {v_mean}, valor maximo: {v_max}, valor total: {v_total}")
+    print(f"""Valor minimo: {v_min}ms,
+valor promedio: {v_mean}ms,
+valor maximo: {v_max}ms,
+valor total: {v_total}ms""")
