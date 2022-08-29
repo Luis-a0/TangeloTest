@@ -2,9 +2,23 @@ import hashlib
 from time import perf_counter
 
 def encript_first_elemnt(languages):
-    hashlib.sha1(list(languages.values())[0].encode()).hexdigest()
+    """
+    Función encargada de encriptar el primer elemento de la lista de lenguajes.
+    Args:
+        - languages: Dict | Lista de lenguajes del País
+    Returns:
+        - : Str | cadena encriptada
+    """
+    return hashlib.sha1(list(languages.values())[0].encode()).hexdigest()
 
 def dict_generate(data):
+    """
+    Función encargada de procesar el JSON obtenido para generar un diccionario con la información relevante
+    Args:
+        - data: JSON| información sin procesar
+    Returns:
+        -  : dict | información procesada
+    """
     dicc = {'region':[], 'city_name':[], 'language':[], 'time':[]}
     data_json = data.json()
 
